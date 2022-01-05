@@ -1,0 +1,140 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{braket}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{bbold}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+
+\usepackage{mathpazo}
+\usepackage{xcolor}
+
+\usepackage{tikz,lipsum,lmodern}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage{pgfplots}
+
+\makeatletter
+\usepackage[most]{tcolorbox}
+
+\setlength{\parindent}{0pt} 
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\theoremstyle{plain}
+\newtheorem*{claim}{Claim}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\pagestyle{fancy}
+% \newcommand{\ehx}[]{} set new commands
+\newcommand{\bd}{\textbf}
+\newcommand\course{CSE 3500}
+
+\newcommand{\fa}{\forall}
+
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\rn}{\mathbb{R}}
+\newcommand{\stopIndent}{\noindent\underline\bd}
+
+
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\headheight 35pt
+\rhead{Edward Song \\ \today \\ Math 136}
+\title{Math 135}
+\author{Edward Song}
+
+\headsep 1.8em
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+
+\newtcbtheorem[auto counter,number within=section]{theo}%
+  {Theorem}{fonttitle=\bfseries\upshape, fontupper=\slshape,
+     arc=0mm, colback=blue!5!white,colframe=blue!75!black}{theorem}
+
+\begin{document}
+
+\section {Vectors in $\rn^n$}
+
+
+% \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Recall]
+   
+% \end{tcolorbox}   
+
+\subsection{Introduction}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition]
+    A vector is an element of the set $\overrightarrow{x} = 
+    \begin{bmatrix}
+        x_1 \\ . \\ . \\ x_n
+    \end{bmatrix}$
+        
+\end{tcolorbox}   
+
+\subsubsection{Properties of Vectors}
+\begin{enumerate}[label=\Roman*.]
+    \item \bd{Equality:} $\overrightarrow{x} = \overrightarrow{u}$. If both belong to $\rn^n$, then $x_1 = u_1, x_n = u_n$.
+    \item \bd{Addition:} $\overrightarrow{x} + \overrightarrow{u} = 
+    \begin{bmatrix}
+        v_1 + u_1 \\
+        .
+        \\
+        v_n + u_n
+    \end{bmatrix}$.
+    \item \bd{Additive Inverse:} $\overrightarrow{x} + (-\overrightarrow{x}) = \overrightarrow{0}$
+    \item \bd{Commutativity:} $\overrightarrow{x} + \overrightarrow{u} = \overrightarrow{u} + \overrightarrow{x}$.
+    \item \bd{Associativity:} $\overrightarrow{x} + \overrightarrow{u} + \overrightarrow{w} = \overrightarrow{u} + (\overrightarrow{x} + \overrightarrow{w})$.
+    \item \bd{Zero vector:} $\overrightarrow{0} = \begin{bmatrix}
+        0 \\. \\. \\0
+    \end{bmatrix}$
+    \item \bd{Scalar Multiplication:} Let $c\in\rn$: $ c\cdot \overrightarrow{v} = \begin{bmatrix}
+        cv_1\\.\\.\\cv_n
+    \end{bmatrix}$
+    \item \bd{Associativity of Multiplication:} Let $c,d \in \rn: (cd)\overrightarrow{v} = c(d\overrightarrow{v})$
+    \item \bd{Distributive Property:} $c(\overrightarrow{x} + \overrightarrow{v}) = c\overrightarrow{x} + c\overrightarrow{v}$
+    \item \bd{Inverse Property:} $0 \cdot \overrightarrow{v} = \overrightarrow{0}$
+    \item If $c\overrightarrow{v} = \overrightarrow{0}$, then either $c = 0$ or $\overrightarrow{v} = \overrightarrow{0}$
+    \end{enumerate}
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe = magenta!75!black,title=Example]
+    \bd{Problem:} Prove \rom{11}
+
+    \bd{Solution:} \\
+
+    Left side:
+    \begin{align*}
+        c\overrightarrow{v} = \overrightarrow{0} \iff \begin{bmatrix}
+            cv_1 \\ . \\cv_n
+        \end{bmatrix} =  \begin{bmatrix}
+            0 \\ . \\0
+        \end{bmatrix} \\
+    \end{align*}
+
+    Right side:
+    \begin{align*}
+        c\overrightarrow{v} = \overrightarrow{0} \\
+        \frac{1}{c}c\overrightarrow{v} = \frac{1}{c}\overrightarrow{0} \\
+        c\overrightarrow{v} = \overrightarrow{0} \\
+    \end{align*}
+
+\end{tcolorbox}   
+
+\end{document}
+
