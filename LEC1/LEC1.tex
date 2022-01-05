@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{braket}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{bbold}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+
+\usepackage{mathpazo}
+\usepackage{xcolor}
+
+\usepackage{tikz,lipsum,lmodern}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage{pgfplots}
+
+
+\usepackage[most]{tcolorbox}
+
+\setlength{\parindent}{0pt} 
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\theoremstyle{plain}
+\newtheorem*{claim}{Claim}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\pagestyle{fancy}
+% \newcommand{\ehx}[]{} set new commands
+\newcommand{\bd}{\textbf}
+\newcommand\course{CSE 3500}
+
+\newcommand{\fa}{\forall}
+
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\rn}{\mathbb{R}}
+\newcommand{\stopIndent}{\noindent\underline\bd}
+
+\headheight 35pt
+
+\rhead{Edward Song \\ \today \\ Math 138}
+\title{Math 135}
+\author{Edward Song}
+
+\headsep 1.8em
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+
+\newtcbtheorem[auto counter,number within=section]{theo}%
+  {Theorem}{fonttitle=\bfseries\upshape, fontupper=\slshape,
+     arc=0mm, colback=blue!5!white,colframe=blue!75!black}{theorem}
+
+\begin{document}
+
+\section {Integration}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Recall]
+    Differential calculus focused on the tangent line problem. The lesson will
+    concentrate on integral calculus concerning the area problem and the connection 
+    between differential and integral calculus.
+\end{tcolorbox}   
+
+\subsection{Areas Under Curves}
+High school review.
+
+\subsection{Riemann Sums and the Definite Integral}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Riemann Sum in Textbook]
+    Given a bounded function $f$ on $[a,b]$, a partition $P$
+    \[a = t_0 < t_1 < t_2 < ... < t_{i-1} < t_i < ... < t_{n-1} < t_n = b\]
+
+    of $[a,b]$, and a set $\{c_1, c_2, ... , c_n\}$, where $c_i \in [t_{i-1} t_i]$, then a \emph{Riemann Sum} for $f$
+    with respect to $P$ is a sm of the form.
+
+    \[ \sum_{i=1}^{n} f(c_i)\Delta t_i \]
+\end{tcolorbox}   
+
+\bd{Remark:} If each subinterval is of equal length, then $\Delta x = \frac{b-a}{n}$ and $x_j = a + (\frac{b-a}{n})j, j=0,1,2,...,n$. Also, $\Delta x \to 0$ as $n\to \infty$
+
+Similarly from the textbook:
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Regular n-Partition]
+    Given an interval $[a,b]$ and an $n\in \nn$, \emph{regular n-partition} of $[a,b]$ is the partition $P^{(n)}$ with
+    \[a = t_0 < t_1 < t_2 < ... < t_{i-1} < t_i < ... < t_{n-1} < t_n = b\]
+    of $[a,b]$ where each subinterval has the \emph{same} length $\Delta t_i = \frac{b-a}{n}$
+\end{tcolorbox}   
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe = magenta!75!black,title=Example]
+    \bd{Problem:} Estimate the area between $y=f(x) = \sqrt{1-x^2}$ and the x-axis between \\$x=0, x=1$ \\
+
+    \bd{Solution:} The area represents $\frac{1}{4}$ of the area of a circle of radius 1, so $A = \frac{pi}{4} \approx .785$. Using Riemann 
+    sums, the value of the area can be bounded by a lower estimate and an upper estimate, e.g left-most and right-most y values. Choosing the subintervals to be of equal length gives $\Delta x = \frac{1}{n}$ so:
+    \[A \approx \sum_{i=1}^{n}f(c_i)\Delta x = \sum_{i=1}^{n}\frac{1}{n}\sqrt{1 - c_i^2}, \leq c_i \leq x_i\]
+
+    If we choose $c_i = x_i = \frac{1}{n}$, this will yield a lower estimate, $A_L$ where: \[A_L = \frac{1}{n}\sqrt{1-\frac{1-(i-1)^2}{n^2}}\]
+    Thus, $A_L < A < A_u$ for all $n$. You can also numerically verify this. I do not want to.
+\end{tcolorbox}   
+
+\bd{\underline{The Connection Between Differential and Integral Calculus}} \\\\
+Consider an arbitrary function $f(x)$ that is continuous on the closed interval $[a,b]$. Define the area function, $A(x)$ as the area under the curve from 
+point a to an arbitary point $x$ in the interval $[a,b]$. Newton and Leibniz independently discovered the relationship between derivative of the area function $A(x)$
+and the curve $f(x)$. They found that the area could be obtained by reversing the process of differentiation. \\
+
+\bd{Consider:} \[A'(x) = \lim_{h\to 0}\frac{A(x+h)-A(x)}{h}\] Then for $h>0$, $A(x+h)-A(x)$ represents the difference of two areas: the area between $a$ and $x+h$
+minus the area between $a$ and $x$ as shown above, This difference of areas can be approximated by the area of a rectangle with base $h$ and height $f(c)$ where $x \leq c \leq x+h$. Thus, $\frac{A(x+h)-A(x)}{h}\approx \frac{f(c)h}{h} = f(c)$; 
+in the limit as $h\to 0$ we have \[A'(x) = \lim_{h\to 0} \frac{A(x+h)-A(x)}{h} = \lim_{h\to 0}f(c)\]
+
+
+
+\end{document}
+
