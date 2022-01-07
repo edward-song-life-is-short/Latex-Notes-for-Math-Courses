@@ -1,0 +1,221 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{braket}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{bbold}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+
+\usepackage{mathpazo}
+\usepackage{xcolor}
+\usepackage{float}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+
+
+\usepackage{tikz,lipsum,lmodern}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\makeatletter
+\usepackage[most]{tcolorbox}
+
+\setlength{\parindent}{0pt} 
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\theoremstyle{plain}
+\newtheorem*{claim}{Claim}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\pagestyle{fancy}
+% \newcommand{\ehx}[]{} set new commands
+\newcommand{\bd}{\textbf}
+\newcommand\course{CSE 3500}
+
+\newcommand{\fa}{\forall}
+
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\rn}{\mathbb{R}}
+\newcommand{\stopIndent}{\noindent\underline\bd}
+
+
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\headheight 35pt
+\rhead{Edward Song \\ \today \\ Math 136}
+\title{Math 135}
+\author{Edward Song}
+
+\headsep 1.8em
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+
+\newtcbtheorem[auto counter,number within=section]{theo}%
+  {Theorem}{fonttitle=\bfseries\upshape, fontupper=\slshape,
+     arc=0mm, colback=blue!5!white,colframe=blue!75!black}{theorem}
+
+\begin{document}
+
+\section{Vectors in $\rn^n$}
+
+
+% \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Recall]
+   
+% \end{tcolorbox}   
+
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Recall]
+    Vectors in $\rn^n = \{\begin{bmatrix}
+        x_1\\\vdots\\x_n
+    \end{bmatrix}\; x_i\in\rn\}$
+
+    We can also work with $\mathbb{C}^n = \{\begin{bmatrix}
+        z_1\\\vdots\\z_n
+    \end{bmatrix}\; z_i\in\mathbb{C}\}$
+        
+\end{tcolorbox}   
+
+\subsection*{1.5 Dot Product}
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition]
+    Let $\overrightarrow{u} = \begin{bmatrix}
+        u_1\\u_2\\\vdots\\u_n
+    \end{bmatrix}$ and $\overrightarrow{v} = \begin{bmatrix}
+        v_1\\v_2\\\vdots\\v_n
+    \end{bmatrix}$ be vectors in $\rn^n$. We define their \bd{dot product} by \[\overrightarrow{u}\cdot\overrightarrow{v} = u_1v_1+u_2v_2+\cdots+u_nv_n\]
+\end{tcolorbox}   
+
+\begin{theo}{Property 1.5.3}{name}
+    \begin{enumerate}
+        \item $\overrightarrow{u},\overrightarrow{v}, \overrightarrow{w} \in \rn$
+        \item $\overrightarrow{u}\cdot\overrightarrow{v} = \overrightarrow{v}\cdot\overrightarrow{u}$
+        \item $(\overrightarrow{u}+\overrightarrow{v})\cdot\overrightarrow{w} = \overrightarrow{u}\overrightarrow{w}+\overrightarrow{v}\overrightarrow{w}$
+        \item $(\overrightarrow{u}\cdot\overrightarrow{v})\cdot\overrightarrow{w} = \overrightarrow{v}\cdot(\overrightarrow{u}\cdot\overrightarrow{w})$
+        \item $\overrightarrow{v}\cdot \overrightarrow{v}\geq 0$
+    \end{enumerate}
+\end{theo}
+
+\subsection*{Geometry in $\rn^2$}
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition]
+    The \bd{length} of the vector $\overrightarrow{v}\in \rn^n$ is $||\overrightarrow{v}|| = \sqrt{\overrightarrow{v}\cdot\overrightarrow{v}}$\\
+    
+    \bd{Aside:} In $\rn^1:$ \[||\overrightarrow{v}||=||[v_1]|| = \sqrt{v_1^2} = |v|\]
+\end{tcolorbox}   
+\begin{theo}{Properties of Length}{name}
+    \begin{enumerate}
+        \item $||\overrightarrow{0}|| = 0$
+        \item $||c \cdot \overrightarrow{v}|| = |c|\cdot||\overrightarrow{v}||$
+        \item $||\overrightarrow{v} + \overrightarrow{u}|| \neq ||\overrightarrow{v}|| + ||\overrightarrow{u}||$
+        \item $||\overrightarrow{v} + \overrightarrow{u}||\leq ||\overrightarrow{v}|| + ||\overrightarrow{u}||$
+    \end{enumerate}
+\end{theo}
+
+\bd{Importance of dot product:} It gives angles between vectors in $\rn^2$!
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition]
+    $\overrightarrow{v} \in \rn^n$ is a \bd{unit vector} if $||\overrightarrow{v} = 1||$
+\end{tcolorbox} 
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition]
+    When $\overrightarrow{v}\in \rn^n$ is a non-zero vector, we can produce a unit vector
+    \[\hat{v} = \frac{\overrightarrow{v}}{||\overrightarrow{v}||}\]
+
+    in the direction of $\overrightarrow{v}$ by scaling $\overrightarrow{v}$. This process is called normalization.
+\end{tcolorbox} 
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition]
+    Let $\overrightarrow{v}$ and $\overrightarrow{u}$ be non-zero vectors in $\rn^n$. The angle $\theta$, in radians $(0\leq \theta\pi)$, between $\overrightarrow{u}$
+    and $\overrightarrow{v}$ is such that \[\overrightarrow{v}\cdot\overrightarrow{u} = ||\overrightarrow{u}||\cdot||\overrightarrow{v}||\cos\theta, \,\text{that is}\,\theta = \arccos(\frac{\overrightarrow{u}\cdot\overrightarrow{v}}{||\overrightarrow{v}||\cdot||\overrightarrow{u}||})\]
+\end{tcolorbox} 
+
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe = magenta!75!black,title=Example]
+    \bd{Problem:} Given 2 vectors, $\begin{bmatrix}
+        0\\1
+    \end{bmatrix}$ and $\begin{bmatrix}
+        1\\0
+    \end{bmatrix}$ find $\theta$.
+
+    \bd{Solution:} \\
+
+   \begin{align*}
+       \cos\theta &= \frac{\begin{bmatrix}
+           0\\1
+       \end{bmatrix}\cdot \begin{bmatrix}
+           1\\0
+       \end{bmatrix}}{||\begin{bmatrix}
+           0\\1
+       \end{bmatrix}||\cdot||\begin{bmatrix}
+           1\\0
+       \end{bmatrix}||}\\
+       &=\frac{0}{1} = 0\\
+       \theta&=\frac{\pi}{2}
+   \end{align*}
+\end{tcolorbox} 
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition]
+    Let $\overrightarrow{u}, \overrightarrow{v}\in \rn^n$. We say $\overrightarrow{u}$ and $\overrightarrow{v}$ are 
+    \underline{perpendicular} (or \underline{orthogonal}) if $\overrightarrow{u}\cdot \overrightarrow{v} = 0$
+\end{tcolorbox} 
+\begin{tcolorbox}[colback=magenta!5!white,colframe = magenta!75!black,title=Example]
+    \bd{Problem:} Find a non-zero vector in $\rn^2$ that is orthogonal to $\begin{bmatrix}
+        1\\2
+    \end{bmatrix}$
+
+    \bd{Solution:}
+    $\begin{bmatrix}
+        2\\-1
+    \end{bmatrix}, \begin{bmatrix}
+        -2\\1
+    \end{bmatrix}, \begin{bmatrix}
+        6\\-3
+    \end{bmatrix}$ 
+
+\end{tcolorbox} 
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe = magenta!75!black,title=Example]
+    \bd{Problem:} Find a non-zero vector perpendicular to $\begin{bmatrix}
+        a\\b
+    \end{bmatrix}$
+
+    \bd{Solution:} \\
+    \begin{align*}
+        &\begin{bmatrix}
+            -b\\a
+        \end{bmatrix}
+        \cdot \begin{bmatrix}
+            a\\b
+        \end{bmatrix} \\
+        =& -ba+ab \\=&0
+    \end{align*}
+
+    Therefore, $\begin{bmatrix}
+        -b \\a
+    \end{bmatrix}$ is a solution.
+\end{tcolorbox} 
+
+\end{document}
+
