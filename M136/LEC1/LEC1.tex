@@ -83,7 +83,7 @@
 \begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition]
     A vector is an element of the set $\overrightarrow{x} = 
     \begin{bmatrix}
-        x_1 \\ . \\ . \\ x_n
+        x_1 \\\vdots\\ x_n
     \end{bmatrix}$
         
 \end{tcolorbox}   
@@ -94,7 +94,7 @@
     \item \bd{Addition:} $\overrightarrow{x} + \overrightarrow{u} = 
     \begin{bmatrix}
         v_1 + u_1 \\
-        .
+        \vdots
         \\
         v_n + u_n
     \end{bmatrix}$.
@@ -102,10 +102,10 @@
     \item \bd{Commutativity:} $\overrightarrow{x} + \overrightarrow{u} = \overrightarrow{u} + \overrightarrow{x}$.
     \item \bd{Associativity:} $\overrightarrow{x} + \overrightarrow{u} + \overrightarrow{w} = \overrightarrow{u} + (\overrightarrow{x} + \overrightarrow{w})$.
     \item \bd{Zero vector:} $\overrightarrow{0} = \begin{bmatrix}
-        0 \\. \\. \\0
+        0 \\\vdots \\0
     \end{bmatrix}$
     \item \bd{Scalar Multiplication:} Let $c\in\rn$: $ c\cdot \overrightarrow{v} = \begin{bmatrix}
-        cv_1\\.\\.\\cv_n
+        cv_1\\\vdots\\cv_n
     \end{bmatrix}$
     \item \bd{Associativity of Multiplication:} Let $c,d \in \rn: (cd)\overrightarrow{v} = c(d\overrightarrow{v})$
     \item \bd{Distributive Property:} $c(\overrightarrow{x} + \overrightarrow{v}) = c\overrightarrow{x} + c\overrightarrow{v}$
@@ -118,21 +118,25 @@
 
     \bd{Solution:} \\
 
-    Left side:
+    Consider two cases: $c\neq 0$ and $c = 0$\\
+    
+    \bd{Case 1:} $c = 0$
     \begin{align*}
         c\overrightarrow{v} = \overrightarrow{0} \iff \begin{bmatrix}
-            cv_1 \\ . \\cv_n
+            cv_1 \\ \vdots\\cv_n
         \end{bmatrix} =  \begin{bmatrix}
-            0 \\ . \\0
+            0 \\ \vdots \\0
         \end{bmatrix} \\
     \end{align*}
 
-    Right side:
+    \bd{Case 2:} $c\neq 0$
     \begin{align*}
         c\overrightarrow{v} = \overrightarrow{0} \\
         \frac{1}{c}c\overrightarrow{v} = \frac{1}{c}\overrightarrow{0} \\
         \overrightarrow{v} = \overrightarrow{0} \\
     \end{align*}
+
+    Therefore, claim is true.
 
 \end{tcolorbox}   
 

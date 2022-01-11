@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1641407984 "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1.tex" "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1.pdf" "LEC1" 1641407987
-  "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1.aux" 1641407987 1067 36751736ceff7406c3d762196f0f76d7 ""
-  "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1.tex" 1641407984 4174 3606530232d2cc80a609b8681956ed20 ""
+["pdflatex"] 1641879952 "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1/LEC1.tex" "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1/LEC1.pdf" "LEC1" 1641879954
+  "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1/LEC1.aux" 1641879954 1067 36751736ceff7406c3d762196f0f76d7 ""
+  "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1/LEC1.tex" 1641879952 4294 acd5624376d9e08fc220a03a0d81fe1d ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -273,13 +273,13 @@
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1616695603 5169178 a2ce6e2d73f603b690db6777d06dbccb ""
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1634734388 2724746 83cfc6a9443539de1a60d0f0d939a611 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "LEC1.aux" 1641407987 1067 36751736ceff7406c3d762196f0f76d7 "pdflatex"
-  "LEC1.out" 1641407987 409 bf8432d1cbeb554bccce2a23531dda82 "pdflatex"
-  "LEC1.tex" 1641407984 4174 3606530232d2cc80a609b8681956ed20 ""
+  "LEC1.aux" 1641879954 1067 36751736ceff7406c3d762196f0f76d7 "pdflatex"
+  "LEC1.out" 1641879954 409 bf8432d1cbeb554bccce2a23531dda82 "pdflatex"
+  "LEC1.tex" 1641879952 4294 acd5624376d9e08fc220a03a0d81fe1d ""
   (generated)
-  "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1.log"
-  "LEC1.aux"
   "LEC1.pdf"
-  "LEC1.out"
-  "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1.pdf"
   "LEC1.log"
+  "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1/LEC1.pdf"
+  "LEC1.aux"
+  "/Users/fasong/Documents/University of Waterloo/1B/Latex Notes/M136/LEC1/LEC1.log"
+  "LEC1.out"
