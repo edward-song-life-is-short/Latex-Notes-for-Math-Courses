@@ -150,62 +150,6 @@ Note that there are many functions for which antiderivatives cannot be expressed
     \end{align*}
 \end{tcolorbox}   
 
-\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
-    \bd{Problem:} \\Let $p(x) = \int_1^{x^2}\frac{1}{t}e^{-t}dt$, find $p'(x)$.
 
-    \bd{Solution:} \\
-    Define $f(t) = \frac{1}{t}e^{-t}$, then $f(t)$ is continuous for all $t\neq 0$. FTC1 applies for all $t\neq 0$.\\
-
-    Let $u=x^2$, then 
-    \begin{align*}
-        p(u) - \int_1^u\frac{1}{t}e^{-t}dt\rightarrow \frac{dp}{dx} = p'(x) &= \frac{dp}{du}\cdot \frac{du}{dx} \\
-        &=(\frac{1}{u}e^{-u})(2x) \\
-        &=\frac{2}{x}e^{-x^2}\,\text{ for $x\neq 0$}
-    \end{align*}
-\end{tcolorbox}   
-
-\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
-    \bd{Problem:} \\For $H(x) = \int_{x^2}^{e^x}\cos(t^2)dt$ find $H'(x)$
-
-    \bd{Solution:} \\
-    Define $f(t) = \cos(t^2)$, then $f(t)$ is continuous for all $t$. \\
-
-    Let $u=x^2$ and $v=e^x$, then
-
-    \begin{align*}
-        H = \int_u^v\,f(t)dt &= \int_u^a\,f(t)dt + \int_a^v\,f(t)dt \\
-        &=-\int_a^u\,f(t)dt + \int_a^v\,f(t)dt
-    \end{align*}
-
-    Next, apply the Chain rule and FTC1 to get:
-    \begin{align*}
-        H'(x) = \frac{dH}{dx} &= -f(u)\frac{du}{dx} + f(v)\frac{dv}{dx} \\
-        &= e^x\cos(e^{2x})-2x\cos(x^4) 
-    \end{align*}
-
-    This leads to the generalized version of the FTC1.
-\end{tcolorbox}   
-
-\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition: FTC1 - Extended Version]
-    Assume that $f$ is continuous and $g+h$ are differentiable. \\
-
-    Let \[H(x) = \int_{g(x)}^{h(x)}f(t)dt\]
-
-    Then $H(x)$ is differentiable and $H'(x) = f(h(x))h'(x)-f(g(x))g'(x)$.
-\end{tcolorbox}   
-
-
-\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition: FTC2]
-    If $f$ is continuous on $[a,b]$, then \[\int_a^b\,f(x)dx = F(b) - F(a)\] where $F'(x) = f(x)$
-\end{tcolorbox}   
-
-\bd{Notes:}
-
-\begin{enumerate}
-    \item A function $F$ is called an antiderivative of $f$ on an interval $I$ if $F'(x)=f(x)$ for all $x\in I$.
-    \item If $F$ is an antiderivative of $f$, then so is $F+c$ for all $c\in \rn$.
-    \item We define the evaluation symbol as: \[F(x)|_a^b = F(b)-F(a)\]
-    \item Using FTC2 is more practical for evaluataing integrals than using Riemann Sums. However, FTC2 assumes that the antiderivative of $f$ is known. We will learn some techniques of integration to help us determine the antiderivatives.
-\end{enumerate}
 
 \end{document}
