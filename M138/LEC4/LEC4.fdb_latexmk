@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1641962757 "c:/Users/injun/OneDrive/Documents/Latex-Notes-for-Math-Courses/M138/LEC4/LEC4.tex" "LEC4.pdf" "LEC4" 1641962762
+["pdflatex"] 1641964510 "c:/Users/injun/OneDrive/Documents/Latex-Notes-for-Math-Courses/M138/LEC4/LEC4.tex" "LEC4.pdf" "LEC4" 1641964514
   "C:/Users/injun/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1632774389 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/injun/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1632774390 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/injun/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1632774419 9742851 226865422998708e09346bf489c4cd68 ""
@@ -20,7 +20,6 @@
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr12.tfm" 1254935040 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr6.tfm" 1254935040 12048 c1068d0f4772be9b0ec447692e1d6d82 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr8.tfm" 1254935040 12064 9b9ade9f64cb32ce1d9a88d21fbd5c2d ""
-  "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmri10.tfm" 1254935040 17148 9556e1b5f936b77a796f68d2d559ba99 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmro10.tfm" 1254935040 12196 3ef208c5996a6e35328a273ab73fa1e1 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmex10.tfm" 1254935040 992 ce925c9346c7613270a79afbee98c070 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi10.tfm" 1254935040 1528 6d36b2385e0ca062a654de6ac59cb34f ""
@@ -48,8 +47,8 @@
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb" 1254935040 119235 05e5c8d6d60439433e50047898c2c0e0 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb" 1254935040 123394 992f5e87d698d9e94717394c62580ea6 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb" 1254935040 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
-  "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb" 1254935040 112593 fda2373ba4420af33949610de4c28fe8 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb" 1254935040 27863 09ce3735688ffde955e72da27c95b61a ""
+  "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb" 1254935040 28109 6d61305ed3d0eb794ebe36f15cf44aa0 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb" 1254935040 27802 5c876bb2c4040caaf035d60bd74a86bd ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb" 1136871348 12410 7504dd653d0e7cf266cb973aeafd597c ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/vf/public/mathpazo/zplmr7t.vf" 1136790254 1532 0ba0b316cfeb3df86c9701756c9a4b71 ""
@@ -289,12 +288,12 @@
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1623002060 55589 34128738f682d033422ca125f82e5d62 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1623002090 4902 efb3d66683a2da2a232f71e3a571a899 ""
-  "LEC4.aux" 1641962761 831 d8f37510d06779f49987ed6fa7d66552 "pdflatex"
-  "LEC4.out" 1641962761 98 863f559d8bd5b66ac6029736bc17c6b0 "pdflatex"
-  "LEC4.tex" 1641962685 5838 fb680c26a2b65ef6012ffb9f4a711130 ""
-  "c:/Users/injun/OneDrive/Documents/Latex-Notes-for-Math-Courses/M138/LEC4/LEC4.tex" 1641962685 5838 fb680c26a2b65ef6012ffb9f4a711130 ""
+  "LEC4.aux" 1641964513 831 198708e2e2cf9089eb8413c3d14c9d7f "pdflatex"
+  "LEC4.out" 1641964513 98 863f559d8bd5b66ac6029736bc17c6b0 "pdflatex"
+  "LEC4.tex" 1641964509 7564 36ab1dfcc8790ee40ce2984d46aa2515 ""
+  "c:/Users/injun/OneDrive/Documents/Latex-Notes-for-Math-Courses/M138/LEC4/LEC4.tex" 1641964509 7564 36ab1dfcc8790ee40ce2984d46aa2515 ""
   (generated)
-  "LEC4.pdf"
   "LEC4.aux"
   "LEC4.out"
   "LEC4.log"
+  "LEC4.pdf"

@@ -86,38 +86,68 @@
    
 % \end{tcolorbox}   
 
-\subsection*{1.5  The Fundamental Theorem of Calculus }
+\subsection*{1.6 The Fundamental Theorem of Calculus (Part 2)}
 
-This theorem provides a connection between differential and integral calculus 
-and is expressed in 2 parts.
+\subsubsection*{Indefinite Integrals}
+Recall that the definite integral, $\int_a^b\,f(x)dx$, is a number, where as the \underline{indefinite integral}, $\int\,f(x)dx$, is a function
+and is the antiderivative of $f(x)$.
 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Definition: Recall]
+   FTC2: $\int_a^b\,f(x)dx = F(x)|_a^b = F(b)-F(a)$ where $F'(x) = f(x)$. \\
 
-\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition: FTC Part 1]
-    Assume $f$ is continuous on an open interval $I$ containing a point $a$. Let 
-    \[G(x) = \int_a^x \,f(t)\,dt\]
-
-    Then $G(x)$ is differentiable at each $x\in I$ and \[G'(x) = f(x)\]
-    
-    Equivalently, \[G'(x) = \frac{d}{dx}\int_a^x\,f(t)dt\]
+   In order to apply FTC2 or evaluate indefinite integrals, it's important to remember the antiderivative of 
+   elementary functions.
 \end{tcolorbox}   
 
-\begin{proof}
-    By definition:
+Note that there are many functions for which antiderivatives cannot be expressed in terms of elementary functions, such as
+\[\int e^{-x^2}, \int \sqrt{1+x^3}dx, \int\sin(x^2)dx\]
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 1 ]
+    \begin{enumerate} [label=(\alph*)]
+        \item $\int\frac{dx}{a+x} = \ln|x+a|+c$
+        \item $\int\frac{dx}{a+bx} = \frac{1}{b}\ln|a+bx|+c$
+        \item $\int(a+bx)^ndx = \frac{1}{b(n+1)}(a+bx)^{n+1}+C, (n\neq 1)$
+        \item $\int\cos(a+bx)dx=\frac{1}{b}\sin(a+bx) +C$
+        \item $\int e^{a+bx} = \frac{1}{b}e^{a+bx} +C$
+    \end{enumerate}
+\end{tcolorbox}   
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 2 ]
+    Evaluate $\int\cos^2xdx$:\\
+
+    Even powers of $\sin x$ or $\cos x$ can be integrated by using trig identities. In this case, use \[\cos^2x = \frac{1}{2}(1+2\cos 2x)dx = \frac{1}{2}(x+\frac{1}{2}\sin 2x)+C\]
+
+    \bd{\underline{Note:}} $\int\cos^2xdx \neq \frac{1}{3}\cos^3x+C$ and is easily shown by differentiation:
+    \[\frac{d}{dx}(\frac{1}{3}\cos^3x+C) = -\sin\cos^2x \neq \cos^2x\]
+\end{tcolorbox}   
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 3 ]
+    Evaluate $\int\frac{x}{x+1}dx$:\\
+
+    When integrating rational functions always perform long divsion when the degree of the numerator is greater than 
+    or equal to the degree of the denominator. Here, \[\frac{x}{x+1} = 1-\frac{1}{x+1}\]\[\int\frac{x}{x+1}dx = \int(1-\frac{1}{1+x})dx=x-\ln|x+1|+C\]
+\end{tcolorbox}   
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 4]
+    Evaluate $\int\frac{2+e^{-x}}{e^x}dx$ \\
+
+    Sometimes it's helpful to manipulate/rewrite the integrand. Here, $\frac{2+e^{-x}}{2^x} = 2e^{-x} + e^{-2x}$.
     \begin{align*}
-        g'(x) &= \lim_{h\to 0}\frac{g(x+h)-g(x)}{h} \\
-        &=\lim_{h\to 0}\frac{1}{h}(\int_a^{x+h}f(t)dt-\int_a^a\,f(t)dt) \\
-        &=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)dt \\
-        &=\lim_{h\to 0}f(c)\,\text{for } c\in[x,x+h] \\
-        &=f(x) \, \text{ since $f$ is continuous and $c\to x$ as $h\to 0$}
+        &\int\frac{2+e^{-x}}{e^x}dx \\ 
+        =&\int(2e^{-x}+e^{-2x})dx  \\
+        =&-2e^{-x}-\frac{1}{2}e^{-2x}+C 
     \end{align*}
-\end{proof}
+\end{tcolorbox}   
 
-\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
-    \bd{Problem:} \\For $g(x) = \int_0^x\frac{dt}{\sqrt{1+t^4}}$ for $x>0$, find $g'(2)$. \\
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 5]
+    Evaluate $\int_0^2|x^2-3x+2|dx$\\
 
-    \bd{Solution:} \\
-    Let $f(t) = \frac{1}{\sqrt{1+t^4}}$, then $f(t)$ is continuous for all $t \rightarrow$ FTC 1 applies. Thus,
-    $g'(x) = \frac{1}{\sqrt{1+x^4}}$ for $x>0$ by FTC1. \[g'(2) = \frac{1}{17}\]
+    \begin{align*}
+        \int_0^2|x^2-3x+2|dx &=\int_0^1(x^2-3x+2)dx+\int_1^2(-x^2+3x-2)dx \\
+        &=(\frac{1}{3}x^3-\frac{3}{2}x^2+2x)\Big|_0^1+(-\frac{1}{3}x^3+\frac{3}{2}x^2-2x)\Big|_1^2 \\
+        &=(\frac{1}{3}-\frac{3}{2}+2)-0+(-\frac{8}{3}+6-4)-(-\frac{1}{3}+\frac{3}{2}-2) \\
+        &= 1
+    \end{align*}
 \end{tcolorbox}   
 
 \begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
