@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{braket}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{bbold}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+
+\usepackage{mathpazo}
+\usepackage{xcolor}
+\usepackage{float}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+
+
+\usepackage{tikz,lipsum,lmodern}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\makeatletter
+\usepackage[most]{tcolorbox}
+
+\setlength{\parindent}{0pt} 
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\theoremstyle{plain}
+\newtheorem*{claim}{Claim}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\pagestyle{fancy}
+% \newcommand{\ehx}[]{} set new commands
+\newcommand{\bd}{\textbf}
+\newcommand\course{CSE 3500}
+
+\newcommand{\fa}{\forall}
+
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\rn}{\mathbb{R}}
+\newcommand{\stopIndent}{\noindent\underline\bd}
+
+
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\headheight 35pt
+\rhead{Edward Song \\ \today \\ Math 138}
+\title{Math 135}
+\author{Edward Song}
+
+\headsep 1.8em
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+
+\newtcbtheorem[auto counter,number within=section]{theo}%
+  {Theorem}{fonttitle=\bfseries\upshape, fontupper=\slshape,
+     arc=0mm, colback=blue!5!white,colframe=blue!75!black}{theorem}
+
+\begin{document}
+
+\section{Integration}
+
+
+% \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Recall]
+   
+% \end{tcolorbox}   
+
+\subsection*{1.5  The Fundamental Theorem of Calculus }
+
+This theorem provides a connection between differential and integral calculus 
+and is expressed in 2 parts.
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition: FTC Part 1]
+    Assume $f$ is continuous on an open interval $I$ containing a point $a$. Let 
+    \[G(x) = \int_a^x \,f(t)\,dt\]
+
+    Then $G(x)$ is differentiable at each $x\in I$ and \[G'(x) = f(x)\]
+    
+    Equivalently, \[G'(x) = \frac{d}{dx}\int_a^x\,f(t)dt\]
+\end{tcolorbox}   
+
+\begin{proof}
+    By definition:
+    \begin{align*}
+        g'(x) &= \lim_{h\to 0}\frac{g(x+h)-g(x)}{h} \\
+        &=\lim_{h\to 0}\frac{1}{h}(\int_a^{x+h}f(t)dt-\int_a^a\,f(t)dt) \\
+        &=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)dt \\
+        &=\lim_{h\to 0}f(c)\,\text{for } c\in[x,x+h] \\
+        &=f(x) \, \text{ since $f$ is continuous and $c\to x$ as $h\to 0$}
+    \end{align*}
+\end{proof}
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
+    \bd{Problem:} \\For $g(x) = \int_0^x\frac{dt}{\sqrt{1+t^4}}$ for $x>0$, find $g'(2)$. \\
+
+    \bd{Solution:} \\
+    Let $f(t) = \frac{1}{\sqrt{1+t^4}}$, then $f(t)$ is continuous for all $t \rightarrow$ FTC 1 applies. Thus,
+    $g'(x) = \frac{1}{\sqrt{1+x^4}}$ for $x>0$ by FTC1. \[g'(2) = \frac{1}{17}\]
+\end{tcolorbox}   
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
+    \bd{Problem:} \\Let $p(x) = \int_1^{x^2}\frac{1}{t}e^{-t}dt$, find $p'(x)$.
+
+    \bd{Solution:} \\
+    Define $f(t) = \frac{1}{t}e^{-t}$, then $f(t)$ is continuous for all $t\neq 0$. FTC1 applies for all $t\neq 0$.\\
+
+    Let $u=x^2$, then 
+    \begin{align*}
+        p(u) - \int_1^u\frac{1}{t}e^{-t}dt\rightarrow \frac{dp}{dx} = p'(x) &= \frac{dp}{du}\cdot \frac{du}{dx} \\
+        &=(\frac{1}{u}e^{-u})(2x) \\
+        &=\frac{2}{x}e^{-x^2}\,\text{ for $x\neq 0$}
+    \end{align*}
+\end{tcolorbox}   
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
+    \bd{Problem:} \\For $H(x) = \int_{x^2}^{e^x}\cos(t^2)dt$ find $H'(x)$
+
+    \bd{Solution:} \\
+    Define $f(t) = \cos(t^2)$, then $f(t)$ is continuous for all $t$. \\
+
+    Let $u=x^2$ and $v=e^x$, then
+
+    \begin{align*}
+        H = \int_u^v\,f(t)dt &= \int_u^a\,f(t)dt + \int_a^v\,f(t)dt \\
+        &=-\int_a^u\,f(t)dt + \int_a^v\,f(t)dt
+    \end{align*}
+
+    Next, apply the Chain rule and FTC1 to get:
+    \begin{align*}
+        H'(x) = \frac{dH}{dx} &= -f(u)\frac{du}{dx} + f(v)\frac{dv}{dx} \\
+        &= e^x\cos(e^{2x})-2x\cos(x^4) 
+    \end{align*}
+
+    This leads to the generalized version of the FTC1.
+\end{tcolorbox}   
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition: FTC1 - Extended Version]
+    Assume that $f$ is continuous and $g+h$ are differentiable. \\
+
+    Let \[H(x) = \int_{g(x)}^{h(x)}f(t)dt\]
+
+    Then $H(x)$ is differentiable and $H'(x) = f(h(x))h'(x)-f(g(x))g'(x)$.
+\end{tcolorbox}   
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Definition: FTC2]
+    If $f$ is continuous on $[a,b]$, then \[\int_a^b\,f(x)dx = F(b) - F(a)\] where $F'(x) = f(x)$
+\end{tcolorbox}   
+
+\bd{Notes:}
+
+\begin{enumerate}
+    \item A function $F$ is called an antiderivative of $f$ on an interval $I$ if $F'(x)=f(x)$ for all $x\in I$.
+    \item If $F$ is an antiderivative of $f$, then so is $F+c$ for all $c\in \rn$.
+    \item We define the evaluation symbol as: \[F(x)|_a^b = F(b)-F(a)\]
+    \item Using FTC2 is more practical for evaluataing integrals than using Riemann Sums. However, FTC2 assumes that the antiderivative of $f$ is known. We will learn some techniques of integration to help us determine the antiderivatives.
+\end{enumerate}
+
+\end{document}
