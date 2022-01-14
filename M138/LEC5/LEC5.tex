@@ -1,0 +1,226 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{braket}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{bbold}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+
+\usepackage{mathpazo}
+\usepackage{xcolor}
+\usepackage{float}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+
+
+\usepackage{tikz,lipsum,lmodern}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\makeatletter
+\usepackage[most]{tcolorbox}
+
+\setlength{\parindent}{0pt} 
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\theoremstyle{plain}
+\newtheorem*{claim}{Claim}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\pagestyle{fancy}
+% \newcommand{\ehx}[]{} set new commands
+\newcommand{\bd}{\textbf}
+\newcommand\course{CSE 3500}
+
+\newcommand{\fa}{\forall}
+
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\rn}{\mathbb{R}}
+\newcommand{\stopIndent}{\noindent\underline\bd}
+
+
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\headheight 35pt
+\rhead{Edward Song \\ \today \\ Math 138}
+\title{Math 135}
+\author{Edward Song}
+
+\headsep 1.8em
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+
+\newtcbtheorem[auto counter,number within=section]{theo}%
+  {Theorem}{fonttitle=\bfseries\upshape, fontupper=\slshape,
+     arc=0mm, colback=blue!5!white,colframe=blue!75!black}{theorem}
+
+\begin{document}
+
+\section{Integration}
+
+
+% \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Recall]
+   
+% \end{tcolorbox}   
+
+\subsection*{1.7 Method of Substitution - Change of Variables}
+
+The integration technique corresponds to the integral version of the chain rule.
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Definition: Recall]
+   Recall that: $\frac{d}{dx}f(g(x)) = f'(g(x))g'(x)$
+\end{tcolorbox}   
+
+In integral form, this becomes :$\int f'(g(x))g'(x)dx = f(g(x))+C$ \\
+
+Another way of showing this is by introducing a change of variable. Let $u=g(x)$ then $\frac{du}{dx} =g'(x)$ or in differential form
+we have $du=g'dx$:
+\[ \int f'(g(x))g'(x)dx=\int f'(u)du = f(u) + C = f(g(x))+C\]
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 1 ]
+    \begin{enumerate} 
+        \item $\int\frac{x}{x^2+1}dx$: \\
+        
+        Let $u=x^2+1$, then $du=2xdx\rightarrow xdx = \frac{1}{2}du$. This, \[\int\frac{xdx}{x^2+1}=\frac{1}{2}\frac{du}{u}=\frac{1}{2}\ln|u|+C = \frac{1}{2}\ln|x^2+1|+C\]
+        \underline{Note:} The substitution $u=x^2$ also works.
+        \item $\int\frac{\sin(3\ln x)}{x}dx$:
+        
+        Let $u=3\ln x$, then $du = \frac{3}{x}dx\rightarrow \frac{dx}{x}=\frac{1}{3}du$. This gives:
+        \begin{align*}
+            \int\frac{\sin(3\ln x)}{x}dx&=\frac{1}{3}\int\sin udu \\
+            &=-\frac{1}{3}\cos u+ C\\
+            &=-\frac{1}{3}\cos(3\ln x)+C
+        \end{align*}
+
+        \underline{Note:} $u=\ln x$ also works.
+        \item $\int(x^2e^{x^3})dx:$:
+        
+        Let $u=x^3$, then $du=3x^2dx\rightarrow x^2dx=\frac{1}{3}du$. This gives:
+        \begin{align*}
+            \int x^2 e^{x^3}dx=\frac{1}{3}\int e^udu&=\frac{1}{3}e^u+C\\
+            &=\frac{1}{3}e^{x^3}+C
+        \end{align*}
+    \end{enumerate}
+\end{tcolorbox}   
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 2 ]
+    \begin{enumerate}
+        \item $\int\sqrt{1+e^x}dx$: \\ 
+        Let $u=1+e^x$, then $du=e^xdx$. This gives:
+        \begin{align*}
+            \int e^x\sqrt{1+e^x}dx = \int\sqrt{u}du&=\frac{2}{3}u^{\frac{3}{2}}+C\\
+            &=\frac{2}{3}(1+e^x)^{\frac{3}{2}}+C
+        \end{align*}
+        \item $\int\frac{dx}{x^2+4x+5}$: 
+        
+        Completing the square is sometimes helpful. Rewrite $x^2+4x+5=(x+2)^2+1$. Let $u=x+2$, then $du=dx$:
+        \begin{align*}
+            \int\frac{dx}{x^2+4x+5}&=\int \frac{dx}{1+(1+x)^2} \\
+            &=\int\frac{du}{1+u^2}\\
+            &=\tan^{-1}u+C = \tan^{-1}(x+2)+C
+        \end{align*}
+
+        \item $\frac{dx}{1+e^x}$: \\
+        Rewrite integrand as $\frac{1}{1+e^x}=\frac{e^{-x}}{1+e^{-x}}$. Then:
+        \begin{align*}
+            \int\frac{dx}{\sqrt{e^{2x}-1}}&=\int\frac{e^{-x}dx}{\sqrt{1-u^2}}\\
+            &=-\int\frac{du}{1-u^2}\\
+            &=-\sin^{-1}u+C\\
+            &=-\sin^{-1}e^{-x}+C
+        \end{align*}
+
+        \item $\int\frac{dx}{\sqrt{e^{-2x}-1}}$:\\
+        Rewrite integrand as \[\frac{1}{\sqrt{e^{2x}-1}}=\frac{1}{e^x\sqrt{1-e^{-2x}}}=\frac{e^{-x}}{1-\sqrt{1-e^{-2x}}}\] Let $u=e^{-x}, du=-e^{-x}dx$. Then:
+        \begin{align*}
+            \int\frac{dx}{e^{2x}-1}&=\int\frac{e^{-x}dx}{\sqrt{1-e^{-2x}}}\\
+            &=-\int\frac{du}{\sqrt{1-u^2}}=-\sin^{-1}u+C \\&= -\sin^{-1}e^{-x}+C
+        \end{align*}
+    \end{enumerate}
+\end{tcolorbox}   
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 3 ]
+    \begin{enumerate}
+        \item $\int\tan xdx$. Let $u=\cos x, du=-\sin xdx$
+        \begin{align*}
+            \int\tan x dx&=\int\frac{\sin x}{\cos x}dx\\
+            &=-\int\frac{du}{u} \\&=-\ln|u| + C\\
+            &=-\ln|\cos x|+C\\
+            &=\ln|\sec x|+C
+        \end{align*}
+
+        \underline{Note:} For trig integrals, it is sometimes helpful to express the integrand in terms of sine and cosine.
+
+        \item $\int\sin^3xdx$: 
+        Rewrite integrand as $\sin^3x=\sin x(1-\cos^2x)$. Then:
+        \begin{align*}
+            \int\sin^3xd&=\int\sin x(1-\cos^2x)dx\\
+            &=-\int(1-u^2)du\\
+            &=-u+\frac{1}{3}u^3+C=-\cos x+\frac{1}{3}\cos^3x+C
+        \end{align*}
+
+        \underline{Note:} This approach works for odd powers of $\sin x, \cos x$.
+
+        \item $\int\sec^2\theta \tan^2\theta d\theta$:
+        Let $u=\tan\theta, du=\sec^2\theta d\theta$. Then:
+        \begin{align*}
+            \int\sec^2\theta\tan^2\theta d\theta =\int u^2du&=\frac{1}{3}u^3+C\\
+            &=\frac{1}{3}\tan^3\theta +C
+        \end{align*}
+        \underline{Note:} This approach works for odd powers of $\sin x, \cos x$.
+
+        \item $\int(\frac{x+2}{x^2+1})dx$.
+         \begin{align*}
+            \int\frac{x+2}{x^2+1}dx&=\int\frac{x}{x^2+1}dx+2\int\frac{dx}{1+x^2}\\
+            &=\frac{1}{2}\ln|1+x^2| + 2\tan^{-1}x+C
+        \end{align*}
+    \end{enumerate}
+\end{tcolorbox}   
+
+\subsection*{More on Substitution}
+Consider the definite integral:
+\[\int_a^b f(g(x))g'(x)d\] then the substitution $u=g(x), du=g'dx$ transforms the integral to:
+\[\int_a^bf(g(x))g'(x)dx=\int_{g(a)}^{g(b)}f(u)du\] When making a substitution to evaluate a definite integral
+remember to change the limits of integration.
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 3 ]
+    
+        \begin{enumerate}
+            \item Evaluate $\int_0^8\frac{\cos(\sqrt{x+1})}{\sqrt{x+1}}dx$:
+            Let $u=\sqrt{x+1}, du=\frac{dx}{2\sqrt{x+1}}$.
+            \[\int_0^8\frac{\cos(\sqrt{x+1})}{\sqrt{x+1}}dx=2\int_1^3\cos udu=2\sin u\Big|_1^3=2(\sin 3-\sin 1)\]
+
+            \item Evaluate $\int_0^{\frac{\pi}{2}}\frac{\cos x dx}{1+\sin x}$. Let $u=\sin x, du=\cos x dx$:
+            \[\int_0^{\frac{\pi}{2}}dx=\int_0^1\frac{du}{1+u}=\ln|1+u|\Big|_0^1=\ln 2-\ln 1= \ln 2\]
+
+            \item Evaluate $\int_{-\pi}^{\pi}\frac{t^4\sin t}{1+t^8}dt$. Note that $f(t)=\frac{t^4\sin t}{1+t^8}$ is an odd function 
+            since $f(-t)=-f(t)$. Hence,
+            \[\int_{-\pi}^{\pi}\frac{t^4\sin t}{1+t^8}dt=0\] since limits are symmetric, recall properties of the definite integral.
+        \end{enumerate}
+ 
+\end{tcolorbox}   
+
+
+\end{document}

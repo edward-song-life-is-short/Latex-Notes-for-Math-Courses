@@ -112,37 +112,46 @@
 
  \bd{Note:} Cross product satisfies the right-hand rule
 
-\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
-    Suppose: $\overrightarrow{v} = \begin{bmatrix}
-        2 \\3
-    \end{bmatrix}$ and $\overrightarrow{e_1} = \begin{bmatrix}
-        1\\0
-    \end{bmatrix}$ What is $\text{proj}_{e_1}\overrightarrow{v}$?\\
+ \begin{theo}{Properties}{na}
+    \begin{enumerate}
+        \item $\overrightarrow{u}\times\overrightarrow{v} = -(\overrightarrow{u}\times\overrightarrow{v})$
+        \item $\overrightarrow{u}\times(\overrightarrow{v}+\overrightarrow{w}) = \overrightarrow{u}\times\overrightarrow{w}+\overrightarrow{u}\times\overrightarrow{w}$
+        \item $\overrightarrow{u}\times({c\overrightarrow{v}} = c(\overrightarrow{u}\times\overrightarrow{v})) = c\overrightarrow{u} \times \overrightarrow{v}$
+    \end{enumerate}
+ \end{theo}
 
-    \bd{Solution:}
-    \begin{align*}
-        proj_{\overrightarrow{e^1}}\overrightarrow{v} &=\frac{\begin{bmatrix}
-            2\\3
-        \end{bmatrix}\cdot\begin{bmatrix}
-            1\\0
-        \end{bmatrix}}{||\begin{bmatrix}
-            1\\0
-        \end{bmatrix}||^2} \\
-        &= \frac{2}{1}\begin{bmatrix}
-            1\\0
-        \end{bmatrix} \\
-        &= \begin{bmatrix}
-            2\\0
-        \end{bmatrix}
-    \end{align*}
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
+    \bd{Problem:} $\overrightarrow{e_1} = \begin{bmatrix}
+        1\\0\\0
+    \end{bmatrix}, \overrightarrow{e^3}=\begin{bmatrix}
+        0\\1\\0
+    \end{bmatrix}, \overrightarrow{e_3} = \begin{bmatrix}
+        0\\0\\1
+    \end{bmatrix}$
+
+    Find $\overrightarrow{e_1}\times\overrightarrow{e_2}$
+    \begin{enumerate}
+        \item Find using right hand rule and coordinate system.
+        \item Math 
+        $\overrightarrow{e_1}\times\overrightarrow{e_2} = \begin{bmatrix}
+            0\\0\\1
+        \end{bmatrix} = \overrightarrow{e_3}$
+    \end{enumerate}
 \end{tcolorbox}   
 
 \begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
+    \bd{Problem:}
+    Find $\overrightarrow{e_3}\times\overrightarrow{e_2}$
+    
+\end{tcolorbox}   
+
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
     Suppose: $\overrightarrow{v} = \begin{bmatrix}
         2 \\3
     \end{bmatrix}$ and $\overrightarrow{e_1} = \begin{bmatrix}
         1\\0
-    \end{bmatrix}$ What is $\text{proj}_{-e_1}\overrightarrow{v}$?\\
+    \end{bmatrix}$ What is $\text{proj}_{-e_1}\overrightarrow{v}$\\
 
     \bd{Solution:}
     \begin{align*}
