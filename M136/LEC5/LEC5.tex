@@ -156,19 +156,91 @@ The left side is a set, while the right side is a vector.
            1\\1
        \end{bmatrix}, \begin{bmatrix}
            3\\4
-       \end{bmatrix}\}$
-   \end{enumerate}
+       \end{bmatrix}\}$:
+       \begin{proof}
+           \begin{align*}
+               span\{\begin{bmatrix}
+                   1\\1
+               \end{bmatrix}\}, \begin{bmatrix}
+                   3, 4
+               \end{bmatrix}&=\{a\begin{bmatrix}
+                   1\\1
+               \end{bmatrix}+b\begin{bmatrix}
+                   3\\4
+               \end{bmatrix}:a, b\in\rn\}\\
+               &=\{\begin{bmatrix}
+                   a+3b\\a+4b
+               \end{bmatrix}:a,b\in\rn\}\\
+               &=\rn^2 \,\text{Note this is not obvious}
+           \end{align*}
+       \end{proof}
+    \end{enumerate}
 \end{tcolorbox}   
 
-\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 5]
-    Evaluate $\int_0^2|x^2-3x+2|dx$\\
+Claim: $\rn^2 = span\{\begin{bmatrix}
+    1\\1
+\end{bmatrix}, \begin{bmatrix}
+    3\\4
+\end{bmatrix}\}$
 
+\begin{proof}
+    We can easily prove $\supseteq$. Let's prove $\subseteq$
+
+    Let $\overrightarrow{v}\in\rn^2$, say $\overrightarrow{v}=\begin{bmatrix}
+        v_1\\v_2
+    \end{bmatrix}$. For $\overrightarrow{v}$ to be in $span\{\begin{bmatrix}
+        1\\1
+    \end{bmatrix}, \begin{bmatrix}
+        3\\4
+    \end{bmatrix}\}$ we must be able to find $a,b\in\rn$ such that 
     \begin{align*}
-        \int_0^2|x^2-3x+2|dx &=\int_0^1(x^2-3x+2)dx+\int_1^2(-x^2+3x-2)dx \\
-        &=(\frac{1}{3}x^3-\frac{3}{2}x^2+2x)\Big|_0^1+(-\frac{1}{3}x^3+\frac{3}{2}x^2-2x)\Big|_1^2 \\
-        &=(\frac{1}{3}-\frac{3}{2}+2)-0+(-\frac{8}{3}+6-4)-(-\frac{1}{3}+\frac{3}{2}-2) \\
-        &= 1
+        &\iff \overrightarrow{v}=\begin{bmatrix}
+            1\\1
+        \end{bmatrix}+b\begin{bmatrix}
+            3\\4
+        \end{bmatrix}\\
+        &\iff v_1=a+3b, v_2=a+4b \\
+        \rightarrow v_2-v_1=b\\a=v_1-3b&=v_1-3(v_2-v)1\\a&=4_1-3v_2
     \end{align*}
+
+    $\therefore \begin{bmatrix}
+        v_1\\v_2
+    \end{bmatrix}=(2v_1-3v_2)\begin{bmatrix}
+        1\\1
+    \end{bmatrix}+(v_2-v_1)\begin{bmatrix}
+        3\\4
+    \end{bmatrix}$
+\end{proof}
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Problem 5]
+    \begin{enumerate}
+        \item T/F: $\rn^3=span\{\begin{bmatrix}
+            1\\0\\0
+        \end{bmatrix}, \begin{bmatrix}
+            1\\1\\0
+        \end{bmatrix}\}$
+
+        Answer is false.
+
+        \begin{align*}
+            \rn^3&=span\{\begin{bmatrix}
+                1\\0\\0
+            \end{bmatrix},\begin{bmatrix}
+                1\\1\\0
+            \end{bmatrix}\}\\
+            &=\{a\begin{bmatrix}
+                1\\0\\0
+            \end{bmatrix}+b\begin{bmatrix}
+                1\\1\\0
+            \end{bmatrix}:a,b\in\rn\}\\
+            &=\{\begin{bmatrix}
+                a+b\\b\\0
+            \end{bmatrix}:a,b\in\rn\}\\
+            &\neq \rn^3 \,\text{because it does nto contain }\begin{bmatrix}
+                0\\0\\1
+            \end{bmatrix}
+        \end{align*}
+    \end{enumerate}
 \end{tcolorbox}   
 
 
