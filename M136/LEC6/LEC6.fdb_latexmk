@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1642443113 "c:/Users/injun/OneDrive/Documents/Latex-Notes-for-Math-Courses/M136/LEC6/LEC6.tex" "LEC6.pdf" "LEC6" 1642443118
+["pdflatex"] 1642444379 "c:/Users/injun/OneDrive/Documents/Latex-Notes-for-Math-Courses/M136/LEC6/LEC6.tex" "LEC6.pdf" "LEC6" 1642444406
   "C:/Users/injun/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1632774389 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/injun/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1632774390 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/injun/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs7.tfm" 1632777023 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
@@ -48,10 +48,13 @@
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb" 1254935040 116908 9a7a12d1e4df280ea0ab4aad83cdef88 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb" 1254935040 23055 2e5b42921de910eaa97b85df04ca4891 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb" 1254935040 30388 702fae6a5f0e6e9c48a1d872b442ffcf ""
+  "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb" 1254935040 31113 04b711c9a4c7f8cb4ed784c6fc4cc1c5 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb" 1254935040 30635 833ec815d446ec453a4913fc26d24cbc ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb" 1254935040 30698 e53a423459271d6c5cdd91f7559396af ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb" 1254935040 119235 05e5c8d6d60439433e50047898c2c0e0 ""
+  "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb" 1254935040 123394 992f5e87d698d9e94717394c62580ea6 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb" 1254935040 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
+  "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb" 1254935040 121065 ba8daf2228d9e511988917831f1e22e9 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb" 1254935040 27863 09ce3735688ffde955e72da27c95b61a ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb" 1136871348 12410 7504dd653d0e7cf266cb973aeafd597c ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb" 1136871348 52665 661b1e6b26edb5f50dd491f8a701cb57 ""
@@ -292,12 +295,12 @@
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1623002060 55589 34128738f682d033422ca125f82e5d62 ""
   "C:/Users/injun/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1623002090 4902 efb3d66683a2da2a232f71e3a571a899 ""
-  "LEC6.aux" 1642443118 723 ecf5351b91bde4edae23ba0b4d4dd29c "pdflatex"
-  "LEC6.out" 1642443117 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "LEC6.tex" 1642443108 6533 4561c2bc752806392b76e562c910acf0 ""
-  "c:/Users/injun/OneDrive/Documents/Latex-Notes-for-Math-Courses/M136/LEC6/LEC6.tex" 1642443108 6533 4561c2bc752806392b76e562c910acf0 ""
+  "LEC6.aux" 1642444383 723 8186a70dad6d737c0e4044cc4a362086 "pdflatex"
+  "LEC6.out" 1642444383 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "LEC6.tex" 1642444406 7911 84e0000c6a2730a8895f35553578539d ""
+  "c:/Users/injun/OneDrive/Documents/Latex-Notes-for-Math-Courses/M136/LEC6/LEC6.tex" 1642444406 7911 84e0000c6a2730a8895f35553578539d ""
   (generated)
+  "LEC6.pdf"
   "LEC6.aux"
   "LEC6.log"
   "LEC6.out"
-  "LEC6.pdf"
