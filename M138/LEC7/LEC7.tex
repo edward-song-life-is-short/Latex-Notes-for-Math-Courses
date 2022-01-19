@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{braket}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{bbold}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+
+\usepackage{mathpazo}
+\usepackage{xcolor}
+\usepackage{float}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+
+
+\usepackage{tikz,lipsum,lmodern}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\makeatletter
+\usepackage[most]{tcolorbox}
+
+\setlength{\parindent}{0pt} 
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\theoremstyle{plain}
+\newtheorem*{claim}{Claim}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\pagestyle{fancy}
+% \newcommand{\ehx}[]{} set new commands
+\newcommand{\bd}{\textbf}
+\newcommand\course{CSE 3500}
+
+\newcommand{\fa}{\forall}
+
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\rn}{\mathbb{R}}
+\newcommand{\stopIndent}{\noindent\underline\bd}
+
+
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\headheight 35pt
+\rhead{Edward Song \\ \today \\ Math 138}
+\title{Math 135}
+\author{Edward Song}
+
+\headsep 1.8em
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+
+\newtcbtheorem[auto counter,number within=section]{theo}%
+  {Theorem}{fonttitle=\bfseries\upshape, fontupper=\slshape,
+     arc=0mm, colback=blue!5!white,colframe=blue!75!black}{theorem}
+
+\begin{document}
+
+\subsection*{2.2 Techniques of Integration}
+The integration technique corresponds to the integral version of the product rule.\\
+
+In integral form this becomes:\[\int udv=uv-\int vdu\]
+Note that $\frac{dv}{dx}=dv, \frac{du}{dx}dx=du$ and the constant is ignored.
+% \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Recall]
+
+% \end{tcolorbox}   
+In this method, we break up the integral into a product of two parts: $u$ and $dv$, where dv is easily integrated and the integral
+$\int vdu$ on the RHS is simpler than the original integral $\int u dv$.
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
+   \begin{enumerate}
+       \item $\int xe^xdx$. \\
+       
+       Let $u=x, dv=e^xdx$, then $du=dx, v=e^x$
+       \[\int xe^xdx = xe^x-\int e^xdx=xe^x-e^x+C\]
+       \item Evaluate $\int x^2\sin xdx$. Let $u=x^2, dv=\sin x dx$, then $du=2xdx, v=-\cos x$,
+       \[\int x^2\sin xdx = -x^2\cos x+2\int x\cos xdx\]
+       We can apply IBP again which yields: $u=x, dv=\cos x dx$ then $du=dx, v=\sin x$.
+
+        \[\int x\cos xdx=x\sin x-\int \sin x dx=x\sin x+\cos x+C\]Hence,
+       \begin{align*}
+           \int x^2\sin x dx&=-x^2\cos x+2[x\sin x+\cos x+C]\\
+           &=-x^2\cos x+2x\sin x+2\cos x+K, K=2C
+       \end{align*}
+      
+       to consider two cases: $\tan\theta>0,\tan\theta<0$.
+   \end{enumerate}
+\end{tcolorbox}   
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Remark ]
+        For integrands of the form $x^n \{\sin(ax), \cos(ax), e^{ax}\}$ with $n$ a
+        positive number, choose $u=x^n+dv=\{\sin(ax), \cos(ax), e^{ax}\}dx$
+\end{tcolorbox}   
+
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!75!black,title=Example]
+    \begin{enumerate}
+        \item $\int\ln xdx$. Let $u=\ln x, dv=dx$, then $du=\frac{dx}{x}, v=x$.
+        \[\ln xdx =x\ln x-\int dx = x\ln x-x+C\]
+
+        \bd{Remark:} For integrals involving $\ln x$, try $u=\ln x$.
+
+        \item Evaluate $\int x\tan^{-1}xdx$. Let $u=\tan^{-1}x, dv=xdx$, then $du=\frac{dx}{1+x^2}, v=\frac{1}{2}x^2$.
+        \begin{align*}
+            \int x \tan^{-1}xdx&=\frac{1}{2}x^2\tan_{-1}x-\frac{1}{2}\int\frac{x^2dx}{1+x^2}\\
+            &=\frac{1}{2}x^2\tan^{-1}-\frac{1}{2}\int[1-\frac{1}{1+x^2}]dx \,\text{by long division}\\
+            &=\frac{1}{2}x^2\tan^{-1}-\frac{1}{2}x+\frac{1}{2}\tan^{-1}x+C
+        \end{align*}
+
+        \item Evaluate $\int_1^ex\ln xdx$. Let $u=\ln x, dv=xdx$, then $du=\frac{dx}{x}, v=\frac{1}{2}x^2$.
+        \begin{align*}
+            \int_1^e\ln xdx&=\frac{1}{2}x^2\ln x\Big|_1^e-\frac{1}{2}\int_1^exdx\\
+            &=\frac{1}{2}e^2-\frac{1}{4}x^2|_1^{e^1}=\frac{1}{4}(e^2+1)
+        \end{align*}
+
+        \item Evaluate $\int e^{ax}\cos(bx)dx$. Can either pick $u=e^{ax}+dx=\cos(bx)dx$ or $u=\cos(bx)+dv=e^{ax}dx$\\
+        Let's use $u=e^{ax}, dv=\cos(bx)dx$, then $du=ae^{ax}dx, v=\frac{1}{b}\sin(bx)$.
+        \[\int e^{ax}\cos(bx)dx=\frac{1}{b}e^{ax}\sin(bx)-\frac{a}{b}\int e^{ax}\sin(bx)dx\]
+        We apply IBP again so: $u=e^{ax}, dv=\sin(bx)dx$, then $du=ae^{ax}dx, v=-\frac{1}{b}\cos(bx)$.
+        \[\int e^{ax}\cos(bx)dx=\frac{1}{b}e^{ax}\sin(bx)-\frac{a}{b}[-\frac{1}{b}e^{ax}\cos(bx)+\frac{a}{b}\int e^{ax}\cos(bx)dx]\]
+        We can combine both these integrals:
+        
+        \[\rightarrow (1+\frac{a^2}{b^2}\int e^{ax}\cos(bx)dx=\frac{1}{b}e^{ax}\sin(bx)+\frac{a}{b^2}e^{ax}\cos(bx)\]
+        
+        \begin{align*}
+            \rightarrow \int e^{ax}\cos(bx)dx&=\frac{\frac{1}{b}e^{ax}(\sin(bx)+\frac{a}{b}\cos(bx))}{(1+\frac{a^2}{b^2})}+C\\
+            &=\frac{e^{ax}(b\sin(bx)+a\cos(bx))}{a^2+b^2}+C
+        \end{align*}
+    \end{enumerate}
+ \end{tcolorbox}   
+
+
+
+\end{document}
